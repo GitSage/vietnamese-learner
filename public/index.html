@@ -1,0 +1,41 @@
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+    <script src='src/word-repository.js'></script>
+    <script>
+        let words;
+        document.addEventListener("DOMContentLoaded", () => {
+            let wordsSelect = document.querySelector('#words');
+
+            getAllWords().then((result) => {
+                words = result;
+
+               for(let i = 0; i < words.length; i++) {
+                   let option = document.createElement('option');
+                   option.text = words[i].english;
+                   option.value = ''+i;
+                   wordsSelect.add(option);
+               }
+            });
+            document.querySelector('#words');
+        });
+
+        function play() {
+            let wordsSelect = document.querySelector('#words');
+            let index = wordsSelect.options[wordsSelect.selectedIndex].value;
+            let fileName = words[index].fileName;
+            new Audio(`audio/${fileName}`).play();
+        }
+
+    </script>
+</head>
+<body>
+    <select title="Words" id="words"></select>
+    <button onclick="play()">Play</button>
+</body>
+</html>
