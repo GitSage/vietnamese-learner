@@ -32,10 +32,24 @@
             new Audio(`audio/${fileName}`).play();
         }
 
+        function downloadWord() {
+            addWord(document.querySelector('#newWordEnglish').value, document.querySelector('#newWordVietnamese').value,).then(() => {
+                console.log('Success');
+            });
+        }
+
     </script>
 </head>
 <body>
     <select title="Words" id="words"></select>
     <button onclick="play()">Play</button>
+
+    <div style="outline: black 1px">
+        <label for="newWordEnglish">English</label>
+        <input id="newWordEnglish" value="hello" />
+        <label for="newWordVietnamese">Vietnamese</label>
+        <input id="newWordVietnamese" value="xin chào"/>
+        <button onclick="downloadWord()">Download</button>
+    </div>
 </body>
 </html>
