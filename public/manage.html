@@ -1,0 +1,29 @@
+<html>
+<head>
+    <script src='scripts/word-repository.js'></script>
+    <script src="scripts/manage.js"></script>
+
+    <link href="styles/manage.css" rel="stylesheet" />
+</head>
+<body>
+    <a href="index.html">Play</a>
+    <div id="manageWordsContainer">
+        <div id="manageWordsHeader" class="manageWordsRow">
+            <div class="manageWordsCell">English</div>
+            <div class="manageWordsCell">Vietnamese</div>
+            <div class="manageWordsCell">Listen</div>
+        </div>
+        <div class="manageWordsRow">
+            <div class="manageWordsCell">
+                <input id="newEnglish" placeholder="English" />
+            </div>
+            <div class="manageWordsCell">
+                <input id="newVietnamese" placeholder="Vietnamese" />
+            </div>
+            <div class="manageWordsCell">
+                <button onclick="addWord()">Add</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -8,19 +8,8 @@ router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 
 
-router.get('/all', function (req, res) {
-    res.status(200).send([
-        {
-            fileName: '1.mp3',
-            english:  'hello',
-            vietnamese: 'xin chào'
-        },
-        {
-            fileName: '2.mp3',
-            english:  'goodbye',
-            vietnamese: 'tạm biệt'
-        },
-    ]);
+router.get('/all', async function (req, res) {
+    res.status(200).send(await repository.getAllWords());
 });
 
 router.post('/', async (req, res) => {

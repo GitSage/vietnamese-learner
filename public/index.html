@@ -1,12 +1,6 @@
 <html>
 <head>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
-    </style>
-    <script src='src/word-repository.js'></script>
+    <script src='scripts/word-repository.js'></script>
     <script>
         let words;
         document.addEventListener("DOMContentLoaded", () => {
@@ -41,6 +35,7 @@
     </script>
 </head>
 <body>
+    <a href="manage.html">Manage</a>
     <select title="Words" id="words"></select>
     <button onclick="play()">Play</button>
 

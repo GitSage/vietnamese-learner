@@ -1,0 +1,19 @@
+#manageWordsContainer {
+    width: 500px;
+    border: 1px lightgrey solid;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.manageWordsRow {
+    display: flex;
+    justify-content: space-between;
+}
+
+#manageWordsHeader {
+    font-weight: bold;
+}
+
+.manageWordsCell {
+    width: 100px;
+}
