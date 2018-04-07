@@ -1,10 +1,11 @@
 let allWords;
 document.addEventListener("DOMContentLoaded", async () => {
-    allWords = await repository.getAllWords();
-    addWords();
+    await reloadWords();
 });
 
-function addWords() {
+async function reloadWords() {
+    allWords = await repository.getAllWords();
+    document.querySelector('#manageWordsContent').innerHTML = '';
     for(let i = 0; i < allWords.length; i++) {
         let word = allWords[i];
         let wordDiv = document.createElement('div');
@@ -19,8 +20,11 @@ function addWords() {
             </div>
             <div class="manageWordsCell">
                 <button onclick="play(${i})">Play</button>
+            </div>
+            <div class="manageWordsCell">
+                <button onclick="deleteWord(${i})">Delete</button>
             </div>`;
-        document.querySelector('#manageWordsContainer').appendChild(wordDiv);
+        document.querySelector('#manageWordsContent').prepend(wordDiv);
     }
 }
 
@@ -36,9 +40,14 @@ async function addWord() {
     document.querySelector('#newEnglish').value = '';
     document.querySelector('#newVietnamese').value = '';
 
-    addWords();
+    await reloadWords();
 }
 
 function play(index) {
     new Audio(`audio/${allWords[index].fileName}`).play();
+}
+
+async function deleteWord(index) {
+    await repository.deleteWord(allWords[index].id);
+    await reloadWords();
 }

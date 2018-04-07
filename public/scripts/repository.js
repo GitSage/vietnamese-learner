@@ -31,6 +31,26 @@ class Repository {
                 });
         });
     }
+
+    async deleteWord(id) {
+        return new Promise((resolve) => {
+            fetch(`http://localhost:3000/word/`, {
+                body: JSON.stringify({
+                    id: id,
+                }),
+                method: 'DELETE',
+                headers: {
+                    'content-type': 'application/json'
+                }
+            })
+                .then((response) => {
+                    return response.json();
+                })
+                .then((json) => {
+                    resolve(json);
+                });
+        });
+    }
 }
 
 repository = new Repository();

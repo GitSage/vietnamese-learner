@@ -1,6 +1,6 @@
 <html>
 <head>
-    <script src='scripts/word-repository.js'></script>
+    <script src='scripts/repository.js'></script>
     <script>
         let words;
         document.addEventListener("DOMContentLoaded", () => {
@@ -38,13 +38,5 @@
     <a href="manage.html">Manage</a>
     <select title="Words" id="words"></select>
     <button onclick="play()">Play</button>
-
-    <div style="outline: black 1px">
-        <label for="newWordEnglish">English</label>
-        <input id="newWordEnglish" value="hello" />
-        <label for="newWordVietnamese">Vietnamese</label>
-        <input id="newWordVietnamese" value="xin chào"/>
-        <button onclick="downloadWord()">Download</button>
-    </div>
 </body>
 </html>

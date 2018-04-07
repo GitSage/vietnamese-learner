@@ -1,5 +1,5 @@
 #manageWordsContainer {
-    width: 500px;
+    width: 700px;
     border: 1px lightgrey solid;
     padding: 5px;
     border-radius: 5px;
@@ -15,5 +15,5 @@
 }
 
 .manageWordsCell {
-    width: 100px;
+    width: 23%;
 }

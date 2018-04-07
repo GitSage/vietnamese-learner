@@ -25,6 +25,19 @@ class Repository {
         });
     }
 
+    async deleteWord(id) {
+        return new Promise((resolve, reject) => {
+            this.db.run('delete from word where id = ?', [id], (err) => {
+                if(err) {
+                    reject(err);
+                }
+                else {
+                    resolve(id);
+                }
+            });
+        });
+    }
+
     async getAllWords() {
         return new Promise((resolve, reject) => {
             this.db.all('SELECT * FROM word', [], (err, rows) => {

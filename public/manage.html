@@ -1,6 +1,6 @@
 <html>
 <head>
-    <script src='scripts/word-repository.js'></script>
+    <script src='scripts/repository.js'></script>
     <script src="scripts/manage.js"></script>
 
     <link href="styles/manage.css" rel="stylesheet" />
@@ -12,7 +12,9 @@
             <div class="manageWordsCell">English</div>
             <div class="manageWordsCell">Vietnamese</div>
             <div class="manageWordsCell">Listen</div>
+            <div class="manageWordsCell">Modify</div>
         </div>
+        <div id="manageWordsContent"></div>
         <div class="manageWordsRow">
             <div class="manageWordsCell">
                 <input id="newEnglish" placeholder="English" />
@@ -20,6 +22,7 @@
             <div class="manageWordsCell">
                 <input id="newVietnamese" placeholder="Vietnamese" />
             </div>
+            <div class="manageWordsCell"></div>
             <div class="manageWordsCell">
                 <button onclick="addWord()">Add</button>
             </div>
