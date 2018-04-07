@@ -12,6 +12,13 @@ router.get('/all', async function (req, res) {
     res.status(200).send(await repository.getAllWords());
 });
 
+/**
+ * Get next word to study. Uses an algorithm to intelligently get the next word to practice.
+ */
+router.get('', async function(req, res) {
+    res.status(200).send(await repository.getNextWord());
+});
+
 router.post('/', async (req, res) => {
     let word = {
         english: req.body.english,
@@ -28,6 +35,19 @@ router.post('/', async (req, res) => {
     }
 
     res.status(200).send(word);
+});
+
+router.delete('/', async (req, res) => {
+    try {
+        await repository.deleteWord(req.body.id);
+    }
+    catch(error) {
+        console.error(error);
+        res.status(500).send();
+        return;
+    }
+
+    res.status(200).send({});
 });
 
 module.exports = router;
